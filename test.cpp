@@ -7,9 +7,8 @@ struct A
 	int x;
 	A(int _x):x(_x) {
 	}
-	typedef struct {} streamlizable;
-	std::ostream& toStream(std::ostream& os) {
-		return os << x;
+	__to_stream__(std::ostream& os) {
+		os << x;
 	}
 };
 
