@@ -37,7 +37,8 @@ private:
 private:
 	streamlizer_base s;
 public:
-	template <class T> __streamlize_helper(const T& obj_):s(&obj_, streamlizer<T>::streamlize_fn) {}
+	template <class T> __streamlize_helper(T& obj_):s(&obj_, streamlizer<T>::streamlize_fn) {}
+	template <class T> __streamlize_helper(const T& obj_):s(&obj_, streamlizer<const T>::streamlize_fn) {}
 	void __to_stream(std::ostream& os) const { s.__to_stream(os); }
 };
 

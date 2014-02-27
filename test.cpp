@@ -7,7 +7,7 @@ struct A
 	int x;
 	A(int _x):x(_x) {
 	}
-	__to_stream__(std::ostream& os) {
+	__to_stream__(std::ostream& os) const {
 		os << x;
 	}
 };
