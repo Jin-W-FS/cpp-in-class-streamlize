@@ -15,7 +15,8 @@ struct A
 int main()
 {
 	A a(3);
-	std::cout << "A: " << a << std::endl;
+	std::cout << "A(3): " << a << std::endl;
+	std::cout << "A(2): " << A(2) << std::endl;
 	return 0;
 }
 

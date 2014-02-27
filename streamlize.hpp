@@ -13,6 +13,12 @@ std::ostream& operator<<(std::ostream& os, T& obj) {
 	obj.__to_stream__(os); return os;
 }
 
+// for temp object
+template <class T, class = typename T::streamlizable>
+std::ostream& operator<<(std::ostream& os, T&& obj) {
+	obj.__to_stream__(os); return os;
+}
+
 #else
 
 // common helper class
